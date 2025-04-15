@@ -6,4 +6,9 @@ router.get('/users', (req, res) => {
     res.json(['List of users']);
 });
 
+router.post('/users', (req, res) => {
+    console.log("POST /users was hit");
+    res.json(['Creates user']);
+});
+
 module.exports = router;
