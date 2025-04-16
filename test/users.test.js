@@ -11,10 +11,10 @@ describe('testing GET route', () => {
       });
 });
 
-describe('POST /users', function() {
+describe('POST /api/users', function() {
     it('responds with json', function(done) {
       request(app)
-        .post('/users')
+        .post('/api/users')
         .send({name: 'john'})
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
