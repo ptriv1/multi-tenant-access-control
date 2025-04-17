@@ -11,4 +11,7 @@ app.use('/api/users', userRoutes);
 const tenantRoutes = require('./routes/tenants');
 app.use('/api/tenants', tenantRoutes);
 
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
+
 module.exports = app;
