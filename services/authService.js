@@ -21,7 +21,7 @@ async function verifyLogin(username, password, tenantId) {
             return null;
         else
             if (await (bcrypt.compare(password, user.password))) 
-                {const token = jwt.sign({ username }, 'secret', { expiresIn: '1h' });
+                {const token = jwt.sign({ username, tenantId }, 'secret', { expiresIn: '1h' });
                 return token;}
             else
                 {return null;}
