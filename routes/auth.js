@@ -4,8 +4,8 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/login', async (req, res) => {
-    const { username, password } = req.body;
-    const token = await verifyLogin(username, password);
+    const { username, password, tenantId } = req.body;
+    const token = await verifyLogin(username, password, tenantId);
     console.log("POST /login was hit");
     if (token)
         res.status(200).json({ token });
