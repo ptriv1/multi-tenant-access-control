@@ -1,5 +1,3 @@
-const admin = "admin";
+const roles = ["admin", "user"];
 
-const user = "user";
-
-module.exports = { admin, user };
+module.exports = { roles };

@@ -15,13 +15,13 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 
-async function verifyLogin(username, password, tenantId) {
-    const user = logins.find(user => (user.tenantId === tenantId) && (user.username === username));
+async function verifyLogin(username, password, tenantId, role) {
+    const user = logins.find(user => (user.role === role) && (user.tenantId === tenantId) && (user.username === username))
         if (!user)
             return null;
         else
             if (await (bcrypt.compare(password, user.password))) 
-                {const token = jwt.sign({ username, tenantId }, 'secret', { expiresIn: '1h' });
+                {const token = jwt.sign({ username, tenantId, role }, 'secret', { expiresIn: '1h' });
                 return token;}
             else
                 {return null;}

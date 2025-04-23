@@ -1,11 +1,11 @@
-const { verifyLogin } = require('./services/authService.js');
+const { verifyLogin } = require('../services/authService.js');
 
 const express = require('express');
 const router = express.Router();
 
 router.post('/login', async (req, res) => {
-    const { username, password, tenantId } = req.body;
-    const token = await verifyLogin(username, password, tenantId);
+    const { username, password, tenantId, role}  = req.body;
+    const token = await verifyLogin(username, password, tenantId, role);
     console.log("POST /login was hit");
     if (token)
         res.status(200).json({ token });
