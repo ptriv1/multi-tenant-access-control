@@ -1,8 +1,3 @@
-// verify that a token is present
-// validate token
-// extract user identity, tenant
-// reject request if checks fail
-
 const jwt = require('jsonwebtoken');
 const secret = process.env.JWT_SECRET;
 

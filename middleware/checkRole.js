@@ -1,5 +1,3 @@
-// confirm user role allows user to do action
-
 const roles = require('../constants/roles.js');
 
 function checkRole(...allowedRoles) {
@@ -18,4 +16,3 @@ function checkRole(...allowedRoles) {
 }
 
 module.exports = { checkRole };
-
