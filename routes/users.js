@@ -9,11 +9,16 @@ router.get('/', verifyToken, checkTenant, checkRole, (req, res) => {
     console.log("GET /users was hit")
     if (req.user.role === roles.ADMIN) 
         res.json(['List of users']); 
+    else
+       res.status(403).json({ message: "Unauthorized" }); 
 });
 
-router.post('/', (req, res) => {
+router.post('/', verifyToken, checkTenant, checkRole, (req, res) => {
     console.log("POST /users was hit");
-    res.json(['Creates user']);
+    if (req.user.role === roles.ADMIN)
+        res.json(['Creates user']);
+    else
+        res.status(403).json({ message: "Unauthorized" });
 });
 
 module.exports = router;

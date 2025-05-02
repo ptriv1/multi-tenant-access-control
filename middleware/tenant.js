@@ -6,7 +6,7 @@ function checkTenant(req, res, next) {
         if (tenant)
             next();
     } catch (err) {
-        return res.status(401).json({ message: "Unauthorized" })
+        return res.status(401).json({ message: "Unauthorized" });
     }
 }
 
