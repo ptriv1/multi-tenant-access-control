@@ -47,3 +47,13 @@ describe('when role check fails', () => {
     });
 });
 
+describe('when role check fails', () => {
+    it('returns unauthorized message', async () =>
+    {
+        await request(app)
+            .get('/api/users')
+            .set('authorization', 'Bearer')
+            .expect(401);
+    })
+})
+
