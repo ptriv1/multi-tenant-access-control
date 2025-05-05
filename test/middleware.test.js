@@ -54,6 +54,6 @@ describe('when role check fails', () => {
             .get('/api/users')
             .set('authorization', 'Bearer')
             .expect(401);
-    })
-})
+    });
+});
 
