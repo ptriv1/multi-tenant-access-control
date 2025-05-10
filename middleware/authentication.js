@@ -9,7 +9,7 @@ function verifyToken(req, res) {
             req.user = decoded;
             next();
             }} catch (err) {
-                return res.status(401).json({ message: "Unauthorized" })
+                return res.status(401).json({ message: "Unauthorized" });
     }
 }
 
