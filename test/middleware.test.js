@@ -14,14 +14,6 @@ const credentials = [
 
 
 
-describe('testing when user authentication with token fails', () => {
-    it('returns unauthorized message', async () => {
-        await request(app)
-        .get('/api/users')
-        .expect(401);  
-    });
-});
-
 describe('testing when role match succeeds', () => {
     it('returns successful login', async () => {
         await request(app)
@@ -30,6 +22,14 @@ describe('testing when role match succeeds', () => {
             .expect(200);
     })
 })
+
+describe('testing when user authentication with token fails', () => {
+    it('returns unauthorized message', async () => {
+        await request(app)
+        .get('/api/users')
+        .expect(401);  
+    });
+});
 
 describe('testing when tenant check fails', () => {
     it('returns unauthorized message', async () => {
