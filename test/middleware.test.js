@@ -12,7 +12,6 @@ const credentials = [
     }
 ];
 
-
 describe('testing when role match succeeds', () => {
     it('returns successful login', async () => {
         await request(app)
